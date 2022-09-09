@@ -7,14 +7,17 @@ public class Registrar : MonoBehaviour
     private Button _btnGuardar;
 
     [SerializeField]
+    private Button _btnContinuar;
+
+    [SerializeField]
     private GameObject Canvas;
 
     private Mediator _mediator;
 
     private void Awake()
     {
-        _btnGuardar.onClick.AddListener(() => _mediator.BackToRegistrar());
         _btnGuardar.onClick.AddListener(() => _mediator.Registrado());
+        _btnContinuar.onClick.AddListener(() => _mediator.ViewIngresar());
     }
 
     public void Configure(Mediator mediator)

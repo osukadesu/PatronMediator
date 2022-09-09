@@ -17,7 +17,7 @@ public class Ingresar : MonoBehaviour
     private void Awake()
     {
         _btningresar.onClick.AddListener(() => _mediator.StartGame());
-        _btnregistrar.onClick.AddListener(() => _mediator.MoveToRegistrar());
+        _btnregistrar.onClick.AddListener(() => _mediator.ViewRegistrar());
     }
 
     public void Configure(Mediator mediator)

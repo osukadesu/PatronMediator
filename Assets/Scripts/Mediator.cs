@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Mediator : MonoBehaviour
 {
@@ -10,6 +12,12 @@ public class Mediator : MonoBehaviour
     [SerializeField]
     private Registrar _registrar;
 
+    [SerializeField]
+    private Text
+
+            txtRegistrado,
+            txtConectado;
+
     private void Awake()
     {
         _registrar.Configure(this);
@@ -17,25 +25,25 @@ public class Mediator : MonoBehaviour
         _registrar.Hide();
     }
 
-    public void BackToRegistrar()
+    public void ViewRegistrar()
+    {
+        _registrar.Show();
+        _ingresar.Hide();
+    }
+
+    public void ViewIngresar()
     {
         _ingresar.Show();
         _registrar.Hide();
     }
 
-    public void StartGame()
-    {
-        Debug.Log("¡Usuario Conectado!");
-    }
-
     public void Registrado()
     {
-        Debug.Log("¡Usuario Registrado!");
+        txtRegistrado.text = "¡Usuario Registrado!";
     }
 
-    public void MoveToRegistrar()
+    public void StartGame()
     {
-        _ingresar.Hide();
-        _registrar.Show();
+        txtConectado.text = "¡Usuario Conectado!";
     }
 }
